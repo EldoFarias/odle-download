@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ODLE Streaming IPTV — Download</title>
+<style>
+  :root {
+    --accent: #d13f35;
+    --accent-strong: #9f2f28;
+    --accent-soft: #fff1ef;
+    --text: #162033;
+    --muted: #64748b;
+    --line: #d8e0ee;
+    --surface: #ffffff;
+    --radius-lg: 24px;
+    --radius-md: 18px;
+    --radius-sm: 12px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    min-height: 100%;
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-size: 15px;
+    color: var(--text);
+    background:
+      radial-gradient(circle at top left, rgba(209, 63, 53, 0.10), transparent 36%),
+      radial-gradient(circle at bottom right, rgba(209, 63, 53, 0.06), transparent 40%),
+      linear-gradient(180deg, #f8fbff 0%, #eef3fa 100%);
+  }
+
+  /* ── HEADER ── */
+  header {
+    text-align: center;
+    padding: 56px 24px 40px;
+  }
+
+  .brand-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 72px;
+    height: 72px;
+    border-radius: 20px;
+    background: var(--accent);
+    color: #fff;
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 28px rgba(209, 63, 53, 0.35);
+  }
+
+  header h1 {
+    font-size: clamp(26px, 5vw, 40px);
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    line-height: 1.15;
+  }
+
+  header h1 span {
+    color: var(--accent);
+  }
+
+  header p.tagline {
+    margin-top: 12px;
+    font-size: 16px;
+    color: var(--muted);
+    max-width: 480px;
+    margin-inline: auto;
+    line-height: 1.6;
+  }
+
+  /* ── FEATURES ── */
+  .features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 0 24px 48px;
+    max-width: 700px;
+    margin-inline: auto;
+  }
+
+  .feature-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 6px 14px;
+    font-size: 13px;
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  .feature-badge .dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+  }
+
+  /* ── DOWNLOAD CARDS ── */
+  .download-section {
+    max-width: 800px;
+    margin-inline: auto;
+    padding: 0 24px 24px;
+  }
+
+  .download-section h2 {
+    text-align: center;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 20px;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+
+  @media (max-width: 580px) {
+    .cards { grid-template-columns: 1fr; }
+  }
+
+  .card {
+    background: var(--surface);
+    border-radius: var(--radius-lg);
+    padding: 28px 24px;
+    border: 1.5px solid var(--line);
+    box-shadow: 0 4px 24px rgba(15, 23, 42, 0.06);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    transition: box-shadow 0.2s, border-color 0.2s, transform 0.15s;
+  }
+
+  .card:hover {
+    box-shadow: 0 8px 40px rgba(15, 23, 42, 0.12);
+    border-color: #c0cfe8;
+    transform: translateY(-2px);
+  }
+
+  .card-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 6px;
+    align-self: flex-start;
+  }
+
+  .tag-legacy {
+    background: #fff7ed;
+    color: #b45309;
+  }
+
+  .tag-modern {
+    background: #eff6ff;
+    color: #1d4ed8;
+  }
+
+  .card h3 {
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+  }
+
+  .card .arch {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--muted);
+    margin-top: -8px;
+    font-family: "Courier New", monospace;
+  }
+
+  .card p {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.65;
+    flex: 1;
+  }
+
+  .card .device-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .card .device-list li {
+    font-size: 13px;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .card .device-list li::before {
+    content: "";
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--line);
+    flex-shrink: 0;
+  }
+
+  .download-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 20px;
+    border-radius: var(--radius-sm);
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    border: none;
+    transition: background 0.15s, transform 0.1s, box-shadow 0.15s;
+    margin-top: 4px;
+  }
+
+  .download-btn:active { transform: scale(0.97); }
+
+  .btn-legacy {
+    background: #fff7ed;
+    color: #b45309;
+    border: 1.5px solid #fed7aa;
+  }
+
+  .btn-legacy:hover {
+    background: #ffedd5;
+    box-shadow: 0 4px 16px rgba(180, 83, 9, 0.15);
+  }
+
+  .btn-modern {
+    background: var(--accent);
+    color: #fff;
+    box-shadow: 0 4px 18px rgba(209, 63, 53, 0.30);
+  }
+
+  .btn-modern:hover {
+    background: var(--accent-strong);
+    box-shadow: 0 6px 24px rgba(209, 63, 53, 0.40);
+  }
+
+  .btn-icon {
+    font-size: 18px;
+    line-height: 1;
+  }
+
+  /* ── HELP NOTE ── */
+  .help-note {
+    max-width: 800px;
+    margin: 20px auto 0;
+    padding: 0 24px;
+  }
+
+  .help-note-inner {
+    background: #f9fbff;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+    padding: 16px 20px;
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    text-align: center;
+    padding: 40px 24px 48px;
+    font-size: 12px;
+    color: #94a3b8;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand-mark">OD</div>
+  <h1>ODLE <span>Streaming</span> IPTV</h1>
+  <p class="tagline">Assista canais ao vivo, séries e filmes em qualidade HD direto no seu dispositivo Android.</p>
+</header>
+
+<div class="features">
+  <span class="feature-badge"><span class="dot"></span>Canais ao vivo</span>
+  <span class="feature-badge"><span class="dot"></span>Séries e filmes</span>
+  <span class="feature-badge"><span class="dot"></span>Guia de programação (EPG)</span>
+  <span class="feature-badge"><span class="dot"></span>Compatível com TV Box</span>
+  <span class="feature-badge"><span class="dot"></span>Android 5.0+</span>
+  <span class="feature-badge"><span class="dot"></span>Ativação por chave</span>
+</div>
+
+<div class="download-section">
+  <h2>Escolha a versão para o seu dispositivo</h2>
+
+  <div class="cards">
+
+    <!-- CARD V7 (LEGACY) -->
+    <div class="card">
+      <span class="card-tag tag-legacy">Dispositivos antigos</span>
+      <h3>ODLE Streaming</h3>
+      <p class="arch">ARMv7 · 32 bits</p>
+      <p>Para TV Boxes, aparelhos Android antigos e celulares com processador de 32 bits. Se você não sabe qual versão baixar, experimente esta primeiro.</p>
+      <ul class="device-list">
+        <li>TV Box MX, MXQ, TX e similares</li>
+        <li>Android 5.0 a 9.0 (32 bits)</li>
+        <li>Celulares antigos (antes de 2018)</li>
+      </ul>
+      <a class="download-btn btn-legacy" href="https://github.com/EldoFarias/odle-iptv-backend/releases/latest/download/app-armeabi-v7a-debug.apk" download>
+        <span class="btn-icon">⬇</span>
+        Baixar versão ARMv7
+      </a>
+    </div>
+
+    <!-- CARD V8 (MODERN) -->
+    <div class="card">
+      <span class="card-tag tag-modern">Dispositivos novos</span>
+      <h3>ODLE Streaming</h3>
+      <p class="arch">ARM64 · 64 bits</p>
+      <p>Para celulares modernos, tablets e TV Boxes com processador de 64 bits. Melhor desempenho e menor consumo de bateria nos dispositivos atuais.</p>
+      <ul class="device-list">
+        <li>Celulares Android modernos (2018+)</li>
+        <li>Android 8.0+ com arquitetura 64 bits</li>
+        <li>TV Boxes de última geração</li>
+      </ul>
+      <a class="download-btn btn-modern" href="https://github.com/EldoFarias/odle-iptv-backend/releases/latest/download/app-arm64-v8a-debug.apk" download>
+        <span class="btn-icon">⬇</span>
+        Baixar versão ARM64
+      </a>
+    </div>
+
+  </div>
+</div>
+
+<div class="help-note">
+  <div class="help-note-inner">
+    Não sabe qual versão escolher? Baixe a <strong>ARMv7</strong> — ela funciona na maioria dos dispositivos.<br>
+    Após instalar, seu revendedor vai ativar o app com a sua chave de dispositivo.
+  </div>
+</div>
+
+<footer>
+  &copy; 2025 ODLE Streaming IPTV. Todos os direitos reservados.
+</footer>
+
+</body>
+</html>
