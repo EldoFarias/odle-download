@@ -105,6 +105,51 @@
     flex-shrink: 0;
   }
 
+  /* ── NOVIDADES ── */
+  .whats-new {
+    max-width: 800px;
+    margin: 0 auto 36px;
+    padding: 0 24px;
+  }
+
+  .whats-new-inner {
+    background: linear-gradient(135deg, var(--accent-soft), #fff);
+    border: 1.5px solid #f7c9c3;
+    border-radius: var(--radius-md);
+    padding: 20px 24px;
+    text-align: center;
+  }
+
+  .whats-new-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--accent);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 999px;
+    margin-bottom: 10px;
+  }
+
+  .whats-new-inner h3 {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+
+  .whats-new-inner p {
+    font-size: 13.5px;
+    color: var(--muted);
+    line-height: 1.6;
+    max-width: 560px;
+    margin-inline: auto;
+  }
+
   /* ── DOWNLOAD CARDS ── */
   .download-section {
     max-width: 800px;
@@ -308,6 +353,14 @@
   <span class="feature-badge"><span class="dot"></span>Ativação por chave</span>
 </div>
 
+<div class="whats-new">
+  <div class="whats-new-inner">
+    <span class="whats-new-badge">Novidade · v2.5.4</span>
+    <h3>🚀 App até 60% mais leve</h3>
+    <p>Reduzimos bastante o tamanho de instalação — agora o app instala e abre mais rápido, principalmente em TV Box e Mi Stick mais antigas ou com pouco espaço livre.</p>
+  </div>
+</div>
+
 <div class="download-section">
   <h2>Escolha a versão para o seu dispositivo</h2>
 
@@ -324,7 +377,7 @@
         <li>Android 5.0 a 9.0 (32 bits)</li>
         <li>Celulares antigos (antes de 2018)</li>
       </ul>
-      <a class="download-btn btn-legacy" href="https://github.com/EldoFarias/odle-download/releases/latest/download/app-armeabi-v7a-debug.apk" download>
+      <a class="download-btn btn-legacy" href="https://github.com/EldoFarias/odle-download/releases/latest/download/app-armeabi-v7a-release.apk" download>
         <span class="btn-icon">⬇</span>
         Baixar versão ARMv7
       </a>
@@ -341,7 +394,7 @@
         <li>Android 8.0+ com arquitetura 64 bits</li>
         <li>TV Boxes de última geração</li>
       </ul>
-      <a class="download-btn btn-modern" href="https://github.com/EldoFarias/odle-download/releases/latest/download/app-arm64-v8a-debug.apk" download>
+      <a class="download-btn btn-modern" href="https://github.com/EldoFarias/odle-download/releases/latest/download/app-arm64-v8a-release.apk" download>
         <span class="btn-icon">⬇</span>
         Baixar versão ARM64
       </a>
