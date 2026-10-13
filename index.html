@@ -309,6 +309,42 @@
     line-height: 1;
   }
 
+  /* ── CARD LITE (largura total, abaixo das duas versões completas) ── */
+  .card-lite {
+    grid-column: 1 / -1;
+    border-color: #bbf7d0;
+    background: linear-gradient(135deg, #f0fdf4, #fff 60%);
+  }
+
+  .card-lite:hover { border-color: #86efac; }
+
+  .tag-lite {
+    background: #dcfce7;
+    color: #15803d;
+  }
+
+  .btn-lite {
+    background: #15803d;
+    color: #fff;
+    box-shadow: 0 4px 18px rgba(21, 128, 61, 0.28);
+  }
+
+  .btn-lite:hover {
+    background: #166534;
+    box-shadow: 0 6px 24px rgba(21, 128, 61, 0.38);
+  }
+
+  .lite-cols {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 18px;
+    align-items: start;
+  }
+
+  @media (max-width: 580px) {
+    .lite-cols { grid-template-columns: 1fr; }
+  }
+
   /* ── HELP NOTE ── */
   .help-note {
     max-width: 800px;
@@ -400,12 +436,33 @@
       </a>
     </div>
 
+    <!-- CARD LITE: APK em release de tag fixa "lite" (não usa "latest", que é das versões completas) -->
+    <div class="card card-lite">
+      <span class="card-tag tag-lite">Ultraleve · TV Box com pouca memória</span>
+      <h3>ODLE IPTV LITE</h3>
+      <p class="arch">Universal · 32 e 64 bits · menos de 1 MB</p>
+      <div class="lite-cols">
+        <p>Versão enxuta para TV Boxes antigas e aparelhos com 1 GB de RAM: roda liso onde a versão completa pesa. Canais ao vivo com mini player e guia de programação, filmes e séries com sinopse, favoritos e busca. Usa a mesma licença: se o ODLE já está ativado no aparelho, o Lite já vem liberado.</p>
+        <ul class="device-list">
+          <li>TV Box com 1 GB de RAM</li>
+          <li>Android 5.0 ou superior</li>
+          <li>Funciona em 32 e 64 bits</li>
+          <li>Ideal se a versão completa travar</li>
+        </ul>
+      </div>
+      <a class="download-btn btn-lite" href="https://github.com/EldoFarias/odle-download/releases/download/lite/odle-lite.apk" download>
+        <span class="btn-icon">⬇</span>
+        Baixar ODLE IPTV LITE
+      </a>
+    </div>
+
   </div>
 </div>
 
 <div class="help-note">
   <div class="help-note-inner">
     Não sabe qual versão escolher? Baixe a <strong>ARMv7</strong> — ela funciona na maioria dos dispositivos.<br>
+    TV Box com pouca memória ou travando? Use o <strong>ODLE IPTV LITE</strong>.<br>
     Após instalar, seu revendedor vai ativar o app com a sua chave de dispositivo.
   </div>
 </div>
