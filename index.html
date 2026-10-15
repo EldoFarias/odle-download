@@ -309,6 +309,31 @@
     line-height: 1;
   }
 
+  /* ── CARD PRO (largura total, abaixo das duas versões completas) ── */
+  .card-pro {
+    grid-column: 1 / -1;
+    border-color: #ddd6fe;
+    background: linear-gradient(135deg, #f5f3ff, #fff 60%);
+  }
+
+  .card-pro:hover { border-color: #c4b5fd; }
+
+  .tag-pro {
+    background: #ede9fe;
+    color: #6d28d9;
+  }
+
+  .btn-pro {
+    background: #6d28d9;
+    color: #fff;
+    box-shadow: 0 4px 18px rgba(109, 40, 217, 0.28);
+  }
+
+  .btn-pro:hover {
+    background: #5b21b6;
+    box-shadow: 0 6px 24px rgba(109, 40, 217, 0.38);
+  }
+
   /* ── CARD LITE (largura total, abaixo das duas versões completas) ── */
   .card-lite {
     grid-column: 1 / -1;
@@ -436,6 +461,26 @@
       </a>
     </div>
 
+    <!-- CARD PRO: APK em release de tag fixa "pro" (não usa "latest", que é das versões completas) -->
+    <div class="card card-pro">
+      <span class="card-tag tag-pro">Novo · Completo e leve</span>
+      <h3>ODLE PRO <span style="font-size:.6em;opacity:.7;font-weight:600">v1.0.0</span></h3>
+      <p class="arch">Universal · 32 e 64 bits · cerca de 1 MB</p>
+      <div class="lite-cols">
+        <p>Todos os recursos do ODLE em um app nativo, rápido e leve. Canais ao vivo com guia de programação, reprise de programas que já passaram e lembretes. Mini tela flutuante e Multitela, com até 4 canais ao mesmo tempo. Perfis com PIN, cada um com seus favoritos e o seu "continuar assistindo". Elenco, trailer e títulos parecidos. Downloads para assistir sem internet. No celular, modo em pé com abas. Usa a mesma licença do ODLE.</p>
+        <ul class="device-list">
+          <li>Celulares, tablets e TV Boxes</li>
+          <li>Android 7.0 ou superior</li>
+          <li>Funciona em 32 e 64 bits</li>
+          <li>Downloads offline e Multitela</li>
+        </ul>
+      </div>
+      <a class="download-btn btn-pro" href="https://github.com/EldoFarias/odle-download/releases/download/pro/odle-pro.apk" download>
+        <span class="btn-icon">⬇</span>
+        Baixar ODLE PRO
+      </a>
+    </div>
+
     <!-- CARD LITE: APK em release de tag fixa "lite" (não usa "latest", que é das versões completas) -->
     <div class="card card-lite">
       <span class="card-tag tag-lite">Ultraleve · TV Box com pouca memória</span>
@@ -462,6 +507,7 @@
 <div class="help-note">
   <div class="help-note-inner">
     Não sabe qual versão escolher? Baixe a <strong>ARMv7</strong> — ela funciona na maioria dos dispositivos.<br>
+    Quer todos os recursos num app mais leve (Android 7+)? Experimente o <strong>ODLE PRO</strong>.<br>
     TV Box com pouca memória ou travando? Use o <strong>ODLE IPTV LITE</strong>.<br>
     Após instalar, seu revendedor vai ativar o app com a sua chave de dispositivo.
   </div>
