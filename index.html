@@ -105,51 +105,6 @@
     flex-shrink: 0;
   }
 
-  /* ── NOVIDADES ── */
-  .whats-new {
-    max-width: 800px;
-    margin: 0 auto 36px;
-    padding: 0 24px;
-  }
-
-  .whats-new-inner {
-    background: linear-gradient(135deg, var(--accent-soft), #fff);
-    border: 1.5px solid #f7c9c3;
-    border-radius: var(--radius-md);
-    padding: 20px 24px;
-    text-align: center;
-  }
-
-  .whats-new-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background: var(--accent);
-    color: #fff;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    padding: 4px 12px;
-    border-radius: 999px;
-    margin-bottom: 10px;
-  }
-
-  .whats-new-inner h3 {
-    font-size: 17px;
-    font-weight: 700;
-    color: var(--text);
-    margin-bottom: 6px;
-  }
-
-  .whats-new-inner p {
-    font-size: 13.5px;
-    color: var(--muted);
-    line-height: 1.6;
-    max-width: 560px;
-    margin-inline: auto;
-  }
-
   /* ── DOWNLOAD CARDS ── */
   .download-section {
     max-width: 800px;
@@ -208,15 +163,7 @@
     align-self: flex-start;
   }
 
-  .tag-legacy {
-    background: #fff7ed;
-    color: #b45309;
-  }
 
-  .tag-modern {
-    background: #eff6ff;
-    color: #1d4ed8;
-  }
 
   .card h3 {
     font-size: 19px;
@@ -282,34 +229,16 @@
 
   .download-btn:active { transform: scale(0.97); }
 
-  .btn-legacy {
-    background: #fff7ed;
-    color: #b45309;
-    border: 1.5px solid #fed7aa;
-  }
 
-  .btn-legacy:hover {
-    background: #ffedd5;
-    box-shadow: 0 4px 16px rgba(180, 83, 9, 0.15);
-  }
 
-  .btn-modern {
-    background: var(--accent);
-    color: #fff;
-    box-shadow: 0 4px 18px rgba(209, 63, 53, 0.30);
-  }
 
-  .btn-modern:hover {
-    background: var(--accent-strong);
-    box-shadow: 0 6px 24px rgba(209, 63, 53, 0.40);
-  }
 
   .btn-icon {
     font-size: 18px;
     line-height: 1;
   }
 
-  /* ── CARD PRO (largura total, abaixo das duas versões completas) ── */
+  /* ── CARD PRO (largura total) ── */
   .card-pro {
     grid-column: 1 / -1;
     border-color: #ddd6fe;
@@ -334,7 +263,7 @@
     box-shadow: 0 6px 24px rgba(109, 40, 217, 0.38);
   }
 
-  /* ── CARD LITE (largura total, abaixo das duas versões completas) ── */
+  /* ── CARD LITE (largura total) ── */
   .card-lite {
     grid-column: 1 / -1;
     border-color: #bbf7d0;
@@ -414,54 +343,12 @@
   <span class="feature-badge"><span class="dot"></span>Ativação por chave</span>
 </div>
 
-<div class="whats-new">
-  <div class="whats-new-inner">
-    <span class="whats-new-badge">Novidade · v2.5.5</span>
-    <h3>🚀 Mais leve e com navegação mais fluida</h3>
-    <p>Além de até 60% menor, corrigimos a abertura do app (mais rápida) e a navegação pelo controle remoto em várias telas — incluindo telas de licença e planos que não respondiam corretamente ao D-PAD.</p>
-  </div>
-</div>
-
 <div class="download-section">
   <h2>Escolha a versão para o seu dispositivo</h2>
 
   <div class="cards">
 
-    <!-- CARD V7 (LEGACY) -->
-    <div class="card">
-      <span class="card-tag tag-legacy">Dispositivos antigos</span>
-      <h3>ODLE Streaming</h3>
-      <p class="arch">ARMv7 · 32 bits</p>
-      <p>Para TV Boxes, aparelhos Android antigos e celulares com processador de 32 bits. Se você não sabe qual versão baixar, experimente esta primeiro.</p>
-      <ul class="device-list">
-        <li>TV Box MX, MXQ, TX e similares</li>
-        <li>Android 5.0 a 9.0 (32 bits)</li>
-        <li>Celulares antigos (antes de 2018)</li>
-      </ul>
-      <a class="download-btn btn-legacy" href="https://github.com/EldoFarias/odle-download/releases/latest/download/app-armeabi-v7a-release.apk" download>
-        <span class="btn-icon">⬇</span>
-        Baixar versão ARMv7
-      </a>
-    </div>
-
-    <!-- CARD V8 (MODERN) -->
-    <div class="card">
-      <span class="card-tag tag-modern">Dispositivos novos</span>
-      <h3>ODLE Streaming</h3>
-      <p class="arch">ARM64 · 64 bits</p>
-      <p>Para celulares modernos, tablets e TV Boxes com processador de 64 bits. Melhor desempenho e menor consumo de bateria nos dispositivos atuais.</p>
-      <ul class="device-list">
-        <li>Celulares Android modernos (2018+)</li>
-        <li>Android 8.0+ com arquitetura 64 bits</li>
-        <li>TV Boxes de última geração</li>
-      </ul>
-      <a class="download-btn btn-modern" href="https://github.com/EldoFarias/odle-download/releases/latest/download/app-arm64-v8a-release.apk" download>
-        <span class="btn-icon">⬇</span>
-        Baixar versão ARM64
-      </a>
-    </div>
-
-    <!-- CARD PRO: APK em release de tag fixa "pro" (não usa "latest", que é das versões completas) -->
+    <!-- CARD PRO: APK em release de tag fixa "pro" -->
     <div class="card card-pro">
       <span class="card-tag tag-pro">Novo · Completo e leve</span>
       <h3>ODLE PRO <span style="font-size:.6em;opacity:.7;font-weight:600">v1.3.0</span></h3>
@@ -481,7 +368,7 @@
       </a>
     </div>
 
-    <!-- CARD LITE: APK em release de tag fixa "lite" (não usa "latest", que é das versões completas) -->
+    <!-- CARD LITE: APK em release de tag fixa "lite" -->
     <div class="card card-lite">
       <span class="card-tag tag-lite">Ultraleve · TV Box com pouca memória</span>
       <h3>ODLE IPTV LITE <span style="font-size:.6em;opacity:.7;font-weight:600">v1.8.0</span></h3>
@@ -506,9 +393,8 @@
 
 <div class="help-note">
   <div class="help-note-inner">
-    Não sabe qual versão escolher? Baixe a <strong>ARMv7</strong> — ela funciona na maioria dos dispositivos.<br>
-    Quer todos os recursos num app mais leve (Android 7+)? Experimente o <strong>ODLE PRO</strong>.<br>
-    TV Box com pouca memória ou travando? Use o <strong>ODLE IPTV LITE</strong>.<br>
+    Celular, tablet ou TV Box com Android 7 ou superior? Baixe o <strong>ODLE PRO</strong>, com todos os recursos.<br>
+    TV Box antiga, com pouca memória ou Android 5/6? Use o <strong>ODLE IPTV LITE</strong>.<br>
     Após instalar, seu revendedor vai ativar o app com a sua chave de dispositivo.
   </div>
 </div>
